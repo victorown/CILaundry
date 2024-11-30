@@ -2,26 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Models\ServicesModel;
+
 class Home extends BaseController
 {
-    public function index()
+    protected $Services;
+
+    public function __construct()
     {
-        // $data['customers'] = [
-        //     [
-        //         'id' => 1,
-        //         'name' => 'John Doe',
-        //         'email' => 'johndoe@example.com',
-        //         'phone' => '123456789',
-        //         'address' => '123 Example Street'
-        //     ]
-        // ];
-        // return view('laundry_view', $data);
-        return view('home');
+        $this->Services = new ServicesModel();
     }
 
-    public function pelanggan()
+    public function index()
     {
-        return view('home');
+        $data['services'] = $this->Services->findAll();
+        $data['title'] = 'Home';
+        return view('home', $data);
     }
-    
+
 }

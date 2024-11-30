@@ -30,6 +30,11 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 
 $routes->group('pelanggan', ['filter' => 'role:pelanggan'], function ($routes) {
     $routes->get('dashboard', 'Home::pelanggan');
+
+    $routes->get('product', 'ServicesController::display');
+    $routes->get('product/detail/(:num)', 'ServicesController::detail/$1');
+
+    $routes->get('orders', 'OrdersController::index');
 });
 
 

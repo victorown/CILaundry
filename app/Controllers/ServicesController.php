@@ -65,7 +65,7 @@ class ServicesController extends BaseController
             'price' => $this->request->getPost('price'),
             'description' => $this->request->getPost('description'),
         ];
-        
+
         if ($id !== null) {
             $data['id'] = $id;
         }
@@ -95,6 +95,27 @@ class ServicesController extends BaseController
 
     public function destroy($id)
     {
-        return 1;
+        if (!$id) {
+            return redirect()->back()->with('error', 'ID tidak valid.');
+        }
+
+        $data = $this->Services->find($id);
+
+        if (!$data) {
+            return redirect()->back()->with('error', 'Data tidak ditemukan.');
+        }
+
+        if ($this->Services->delete($id)) {
+            return redirect()->back()->with('success', 'Data berhasil dihapus.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menghapus data.');
+        }
+    }
+
+    public function detail($id)
+    {
+        $data['service'] = $this->Services->find($id);
+        $data['title'] = 'Detail Service';
+        return view('customers/detail', $data);
     }
 }

@@ -9,7 +9,7 @@
     Document Title
     =============================================
     -->
-    <title>Titan | Multipurpose HTML5 Template</title>
+    <?= $this->renderSection('title'); ?>
     <!--  
     Favicons
     =============================================
