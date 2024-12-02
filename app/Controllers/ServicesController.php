@@ -118,4 +118,11 @@ class ServicesController extends BaseController
         $data['title'] = 'Detail Service';
         return view('customers/detail', $data);
     }
+
+    public function display()
+    {
+        $data['services'] = $this->Services->findAll();
+        $data['title'] = 'Services';
+        return view('customers/services', $data);
+    }
 }

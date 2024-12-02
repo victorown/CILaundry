@@ -34,7 +34,11 @@ $routes->group('pelanggan', ['filter' => 'role:pelanggan'], function ($routes) {
     $routes->get('product', 'ServicesController::display');
     $routes->get('product/detail/(:num)', 'ServicesController::detail/$1');
 
-    $routes->get('orders', 'OrdersController::index');
+    $routes->post('orders/(:num)', 'OrdersController::orders/$1');
+    $routes->get('cart', 'OrdersController::cart');
+    $routes->get('orders/destroy/(:num)', 'OrdersController::destroy/$1');
+
+    $routes->post('payment', 'PaymentController::payment');
 });
 
 

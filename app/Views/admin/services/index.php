@@ -62,7 +62,7 @@
                                     <tr>
                                         <td><?= $i + 1; ?></td>
                                         <td><?= $s['name']; ?></td>
-                                        <td>Rp. <?= $s['price']; ?></td>
+                                        <td>Rp. <?= number_format($s['price'], 0, ',', '.'); ?></td>
                                         <td><?= $s['description']; ?></td>
                                         <td>
                                             <a href="/admin/service/edit/<?= $s['id']; ?>" class="btn btn-warning">Edit</a>

@@ -17,6 +17,9 @@ class OrderItemModel extends Model
         'service_id',
         'quantity',
         'price',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     protected bool $allowEmptyInserts = false;

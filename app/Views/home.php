@@ -44,14 +44,14 @@
                             <div class="shop-item-image"><img src="/assets/customer/images/shop/product-7.jpg" alt="Accessories Pack" />
                                 <div class="shop-item-detail"><a href="/pelanggan/product/detail/<?= $s['id']; ?>" class="btn btn-round btn-b"><span class="icon-basket">Order Now</span></a></div>
                             </div>
-                            <h4 class="shop-item-title font-alt"><a href="#"><?= $s['name']; ?></a></h4><?= $s['price']; ?>
+                            <h4 class="shop-item-title font-alt"><a href="#"><?= $s['name']; ?></a></h4>Rp. <?= number_format($s['price'], 0, ',', '.'); ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
 
             </div>
             <div class="row mt-30">
-                <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="#">See all products</a></div>
+                <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="/pelanggan/product">See all products</a></div>
             </div>
         </div>
     </section>

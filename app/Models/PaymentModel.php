@@ -15,10 +15,12 @@ class PaymentModel extends Model
     protected $allowedFields    = [
         'order_id',
         'payment_date',
-        'amount',
         'payment_method',
         'receipt_img',
         'payment_status',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     protected bool $allowEmptyInserts = false;
