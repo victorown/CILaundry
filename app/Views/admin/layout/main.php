@@ -27,7 +27,7 @@
 		************ -->
 
     <!-- Scrollbar CSS -->
-    <link rel="stylesheet" href="/assets/admin/vendor/overlay-scroll/OverlayScrollbars.min.css" />
+    <link rel="stylesheet" href="/assets/admin/vendorss/overlay-scroll/OverlayScrollbars.min.css" />
   </head>
 
   <body>
@@ -77,18 +77,18 @@
 		************* -->
 
     <!-- Overlay Scroll JS -->
-    <script src="/assets/admin/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
-    <script src="/assets/admin/vendor/overlay-scroll/custom-scrollbar.js"></script>
+    <script src="/assets/admin/vendorss/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+    <script src="/assets/admin/vendorss/overlay-scroll/custom-scrollbar.js"></script>
 
     <!-- Apex Charts -->
-    <script src="/assets/admin/vendor/apex/apexcharts.min.js"></script>
-    <script src="/assets/admin/vendor/apex/custom/dash1/sales.js"></script>
-    <script src="/assets/admin/vendor/apex/custom/dash1/sparkline.js"></script>
-    <script src="/assets/admin/vendor/apex/custom/dash1/sparkline2.js"></script>
+    <script src="/assets/admin/vendorss/apex/apexcharts.min.js"></script>
+    <script src="/assets/admin/vendorss/apex/custom/dash1/sales.js"></script>
+    <script src="/assets/admin/vendorss/apex/custom/dash1/sparkline.js"></script>
+    <script src="/assets/admin/vendorss/apex/custom/dash1/sparkline2.js"></script>
 
     <!-- Rating -->
-    <script src="/assets/admin/vendor/rating/raty.js"></script>
-    <script src="/assets/admin/vendor/rating/raty-custom.js"></script>
+    <script src="/assets/admin/vendorss/rating/raty.js"></script>
+    <script src="/assets/admin/vendorss/rating/raty-custom.js"></script>
 
     <!-- Custom JS files -->
     <script src="/assets/admin/js/custom.js"></script>
