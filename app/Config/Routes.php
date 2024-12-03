@@ -26,6 +26,11 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
     $routes->get('service/edit/(:num)', 'ServicesController::edit/$1');
     $routes->post('service/update/(:num)', 'ServicesController::store/$1');
     $routes->get('service/destroy/(:num)', 'ServicesController::destroy/$1');
+
+    $routes->get('orders', 'OrdersController::index');
+    $routes->get('orders/detail/(:num)', 'OrdersController::detail/$1');
+    $routes->get('orders/approve/(:num)', 'OrdersController::approve/$1');
+    $routes->get('orders/reject/(:num)', 'OrdersController::reject/$1');
 });
 
 $routes->group('pelanggan', ['filter' => 'role:pelanggan'], function ($routes) {

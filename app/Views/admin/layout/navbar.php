@@ -30,8 +30,8 @@
                 <img src="/assets/admin/images/user.png" class="rounded-circle img-3x" alt="Bootstrap Gallery" />
             </a>
             <div class="dropdown-menu dropdown-menu-end shadow">
-                <a class="dropdown-item d-flex align-items-center" href="profile.html"><i
-                        class="bi bi-person fs-4 me-2"></i>Profile</a>
+                <!-- <a class="dropdown-item d-flex align-items-center" href="profile.html"><i
+                        class="bi bi-person fs-4 me-2"></i>Profile</a> -->
                 <a class="dropdown-item d-flex align-items-center" href="/logout"><i
                         class="bi bi-escape fs-4 me-2"></i>Logout</a>
             </div>

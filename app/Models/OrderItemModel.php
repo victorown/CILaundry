@@ -51,4 +51,14 @@ class OrderItemModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getDetailByOrderId($id)
+    {
+        return $this->select('order_items.quantity, order_items.price,
+                            services.name, services.price as service_price')
+            ->join('services', 'services.id = order_items.service_id')
+            ->where('order_items.order_id', $id)
+            ->get()
+            ->getResultArray();
+    }
 }

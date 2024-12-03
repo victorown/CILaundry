@@ -98,7 +98,7 @@ class PaymentController extends BaseController
             'payment_date' => date('Y-m-d H:i:s'),
             'payment_method' => $this->request->getPost('payment_method'),
             'receipt_img' => $receiptPath,
-            'payment_status' => $this->request->getPost('payment_method') === 'cash' ? 'paid' : 'pending',
+            'payment_status' => 'pending',
         ];
 
         if (!$this->Payment->insert($paymentData)) {

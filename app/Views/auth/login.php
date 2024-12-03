@@ -1,5 +1,9 @@
 <?= $this->extend('auth/layout'); ?>
 
+<?= $this->section('title'); ?>
+<title>Login - CILaundry</title>
+<?= $this->endSection(); ?>
+
 <?= $this->section('content'); ?>
 
 <div class="container">
@@ -11,6 +15,20 @@
                         <a href="index.html" class="mb-4 d-flex">
                             <img src="assets/admin/images/logo.svg" class="img-fluid login-logo" alt="Mercury Admin" />
                         </a>
+                        <?php if (session()->get('success')): ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?= session()->get('success') ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (session()->get('error')): ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= session()->get('error') ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
                         <h5 class="fw-light mb-5">Sign in to access dashboard.</h5>
                         <div class="mb-3">
                             <label class="form-label">Your Username</label>
@@ -32,7 +50,7 @@
                                 Login
                             </button>
                         </div>
-                        
+
                         <div class="text-center pt-4">
                             <span>Not registered?</span>
                             <a href="/register" class="text-blue text-decoration-underline ms-2">

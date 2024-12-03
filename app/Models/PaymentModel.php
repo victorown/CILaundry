@@ -52,4 +52,12 @@ class PaymentModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getPaymentByOrderId($id)
+    {
+        return $this->select('payments.payment_date, payments.payment_method,
+                            payments.receipt_img, payments.payment_status')
+            ->where('payments.order_id', $id)
+            ->first();
+    }
 }

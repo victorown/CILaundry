@@ -25,12 +25,17 @@ class AdminDashboardController extends BaseController
         $this->Payment = new PaymentModel();
         $this->Services = new ServicesModel();
         $this->User = new UserModel();
-         
     }
 
     public function index()
     {
+        $data['orders'] = $this->Order->getOrdersDashboard();
+        $data['total_services'] = $this->Services->countAll();
+        $data['total_orders'] = $this->Order->countAll();
+        $data['total_customers'] = $this->User->where('role', 'pelanggan')->countAllResults();
         $data['title'] = 'Admin | Dashboard';
+        $data['subTitle'] = 'Dashboard';
+        // dd($data);
         return view('admin/dashboard', $data);
     }
 }

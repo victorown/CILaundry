@@ -100,7 +100,7 @@ class UsersController extends BaseController
             'role' => 'pelanggan',
         ]);
 
-        return redirect()->to('login');
+        return redirect()->to('login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
     public function login()

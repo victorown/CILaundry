@@ -26,6 +26,14 @@ class OrdersController extends BaseController
         $this->db = \Config\Database::connect();
     }
 
+    public function index()
+    {
+        $data['orders'] = $this->Orders->getAllOrders();
+        $data['title'] = 'Admin | Orders';
+        $data['subTitle'] = 'Orders List';
+        return view('admin/orders/index', $data);
+    }
+
     public function orders($id)
     {
         $data['service'] = $this->Services->find($id);
@@ -70,7 +78,7 @@ class OrdersController extends BaseController
                     'payment_status' => 'unpaid'
                 ];
 
-                $orderId = $this->Orders->insertOrder($order);
+                $orderId = $this->Orders->insert($order);
 
                 $orderItem = [
                     'order_id' => $orderId,
@@ -96,7 +104,6 @@ class OrdersController extends BaseController
             return redirect()->back()->with('error', 'Terjadi kesalahan saat membuat order: ' . $e->getMessage());
         }
     }
-
 
     public function cart()
     {
@@ -139,5 +146,70 @@ class OrdersController extends BaseController
         }
 
         return redirect()->back()->with('success', 'Data berhasil dihapus dan total pembayaran diperbarui.');
+    }
+
+    public function detail($id)
+    {
+        $data['order'] = $this->Orders->getOrderUser($id);
+        $data['items'] = $this->Item->getDetailByOrderId($id);
+        $data['payment'] = $this->Payment->getPaymentByOrderId($id);
+        $data['title'] = 'Admin | Orders';
+        $data['subTitle'] = 'Detail Order';
+        // dd($data);
+        return view('admin/orders/detail', $data);
+    }
+
+    public function approve($id)
+    {
+
+        $order = [
+            'status' => 'completed',
+            'payment_status' => 'paid'
+        ];
+
+        $payment = [
+            'payment_status' => 'confirmed'
+        ];
+
+        $this->db->transStart();
+
+        $this->Orders->update($id, $order);
+
+        $this->Payment->where('order_id', $id)->set($payment)->update();
+
+        $this->db->transComplete();
+
+        if ($this->db->transStatus() === false) {
+            return redirect()->back()->with('error', 'Approval failed. Please try again.');
+        }
+
+        return redirect()->to('/admin/orders')->with('success', 'Order approved successfully.');
+    }
+
+
+    public function reject($id)
+    {
+        $order = [
+            'status' => 'cancelled',
+            'payment_status' => 'unpaid'
+        ];
+
+        $payment = [
+            'payment_status' => 'failed'
+        ];
+
+        $this->db->transStart();
+
+        $this->Orders->update($id, $order);
+
+        $this->Payment->where('order_id', $id)->set($payment)->update();
+
+        $this->db->transComplete();
+
+        if ($this->db->transStatus() === false) {
+            return redirect()->back()->with('error', 'Reject failed. Please try again.');
+        }
+
+        return redirect()->to('/admin/orders')->with('success', 'Order rejected successfully.');
     }
 }

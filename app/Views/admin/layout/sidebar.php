@@ -25,8 +25,8 @@
                     <span class="menu-text">Services</span>
                 </a>
             </li>
-            <li class="<?= isActive('/admin/order') ?>">
-                <a href="/admin/order">
+            <li class="<?= isActive('/admin/orders') ?>">
+                <a href="/admin/orders">
                     <i class="bi bi-box"></i>
                     <span class="menu-text">Orders</span>
                 </a>

@@ -9,7 +9,7 @@
 <section class="home-section home-fade home-full-height" id="home">
     <div class="hero-slider">
         <ul class="slides">
-            <li class="bg-dark-30 bg-dark shop-page-header" style="background-image:url(&quot;/assets/customer/images/shop/slider1.png&quot;);">
+            <li class="bg-dark-30 bg-dark shop-page-header" style="background-image:url(/assets/customer/images/shop/slider1.png);">
                 <div class="titan-caption">
                     <div class="caption-content">
                         <div class="font-alt mb-30 titan-title-size-1">This is CILaundry</div>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </li>
-            <li class="bg-dark-30 bg-dark shop-page-header" style="background-image:url(&quot;/assets/customer/images/shop/slider3.png&quot;);">
+            <li class="bg-dark-30 bg-dark shop-page-header" style="background-image:url(/assets/customer/images/shop/slider3.png);">
                 <div class="titan-caption">
                     <div class="caption-content">
                         <div class="font-alt mb-30 titan-title-size-1"> This is CILaundry</div>
@@ -65,7 +65,7 @@
         </div>
         <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=EMy5krGcoOU', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
     </section>
-    <section class="module">
+    <!-- <section class="module">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <?= $this->include('customers/layout/footer'); ?>
 </div>
 
